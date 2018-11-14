@@ -77,7 +77,7 @@ class FotoHeader extends Component {
     }
 }
 
-export default class Foto extends Component {
+export default class FotoItem extends Component {
     render(){
         return (
           <div className="foto">
