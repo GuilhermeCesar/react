@@ -64,14 +64,14 @@ class FotoHeader extends Component {
         return (
             <header className="foto-header">
               <figure className="foto-usuario">
-                <img src="https://instagram.frao1-2.fna.fbcdn.net/vp/a795fc143b9c08a4162ee479b8d3febb/5C841DE1/t51.2885-19/11199408_569104449895751_1837574990_a.jpg" alt="foto do usuario"/>
+                <img src={this.props.foto.urlPerfil} alt="foto do usuario"/>
                 <figcaption className="foto-usuario">
                   <a href="#">
-                    alots
+                    {this.props.foto.loginUsuario}
                   </a>  
                 </figcaption>
               </figure>
-              <time className="foto-data">03/10/2016 20:13</time>
+              <time className="foto-data">{this.props.foto.horario}</time>
             </header>            
         );
     }
@@ -81,8 +81,8 @@ export default class FotoItem extends Component {
     render(){
         return (
           <div className="foto">
-            <FotoHeader/>
-            <img alt="foto" className="foto-src" src="https://instagram.frao1-2.fna.fbcdn.net/vp/3391e2fe3a13eed1812fb232bbb43871/5C8408C2/t51.2885-15/e35/43721655_343615932862668_3416672081912012367_n.jpg"/>
+            <FotoHeader foto={this.props.foto}/>
+            <img alt="foto" className="foto-src" src={this.props.foto.urlFoto}/>
             <FotoInfo/>
             <FotoAtualizacoes/>
           </div>            
